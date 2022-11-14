@@ -60,3 +60,5 @@
     }
 
     echo 'decryptedPassword::::: '. decryptHash($PASSWORD_HASH, $HASH_START, $ALPHABETS_HASHTABLE);
+
+    // Finalmente comparar se o $userInput === decryptHash($PASSWORD_HASH, $HASH_START, $ALPHABETS_HASHTABLE);
