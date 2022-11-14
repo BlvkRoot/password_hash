@@ -67,7 +67,7 @@
      * também o $NUMBERS_HASHTABLE e criar o $SYMBOLS_HASHTABLE isso para pegar os valores da senha 
      * antes de ser criptografada
      * o ultimo parametro $password por enquanto não tá sendo usado
-     * mas caso ele se seje usado, então a função vair retornar um booleano,
+     * mas caso ele seje usado, então a função vai retornar um booleano,
      * retornando $hashDecripted === $password
      */
     function decryptHash($hashValue, $hashStart, $alphabetHashtable, $password = '') {
