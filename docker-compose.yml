@@ -1,0 +1,14 @@
+version: '3.0'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+        - "80:80"
+    volumes:
+        - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+        - ./src:/src
+  php:
+    build: .
+    volumes:
+        - ./src:/src
