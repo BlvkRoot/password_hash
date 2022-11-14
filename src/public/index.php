@@ -33,6 +33,16 @@
     echo 'inputPassword::::: '. $userInput;
     echo '<br>';
 
+    /**
+     * @param $password string
+     * @param $alphabetsHashtable array
+     * @param $passwordHash string
+     * @return void
+     * Essa função recebe como parametro a senha digitada, a tabela hash para alterar os valores
+     * e por ultimo a referencia da senha criptografada
+     * para questão de exemplo eu adicionei apenas o $ALPHABETS_HASHTABLE mas vai ser necessário passar
+     * também o $NUMBERS_HASHTABLE e criar o $SYMBOLS_HASHTABLE
+     */
     function encryptPassword($password, $alphabetsHashtable, &$passwordHash) {
         foreach(str_split($password) as $input) { 
             if (isset($alphabetsHashtable[$input]))
@@ -45,6 +55,21 @@
     encryptPassword($userInput, $ALPHABETS_HASHTABLE, $PASSWORD_HASH);
     echo 'encryptedPassword::::: '. $PASSWORD_HASH;
 
+        /**
+     * @param $hashValue string
+     * @param $hashStart string
+     * @param $alphabetHashtable array
+     * @param $password string
+     * @return $hashDecripted string | boolean
+     * Essa função recebe como parametro a senha criptografada, o hash inicial constante da senha
+     * e por ultimo a tabela de Hash,
+     * para questão de exemplo eu adicionei apenas o $ALPHABETS_HASHTABLE mas vai ser necessário passar
+     * também o $NUMBERS_HASHTABLE e criar o $SYMBOLS_HASHTABLE isso para pegar os valores da senha 
+     * antes de ser criptografada
+     * o ultimo parametro $password por enquanto não tá sendo usado
+     * mas caso ele se seje usado, então a função vair retornar um booleano,
+     * retornando $hashDecripted === $password
+     */
     function decryptHash($hashValue, $hashStart, $alphabetHashtable, $password = '') {
         $hashedValues = explode('_', explode($hashStart, $hashValue)[1]);
         $hashDecripted = '';
